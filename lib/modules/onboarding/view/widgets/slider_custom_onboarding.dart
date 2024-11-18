@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/constant/colors/app_colors.dart';
@@ -23,12 +24,12 @@ class SliderCustomOnBoarding extends GetView<OnBoardingController> {
           },
           itemCount: onBoardingList.length,
           itemBuilder: (context, i) => Padding(
-                padding: const EdgeInsets.all(50),
+                padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 50.h),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 30.h,
                     ),
                     Expanded(
                       child: SizedBox(
@@ -37,30 +38,21 @@ class SliderCustomOnBoarding extends GetView<OnBoardingController> {
                         child: Image.asset(onBoardingList[i].image),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: 10.h,
                     ),
                     Container(
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: CustomText(
                         text: " ${onBoardingList[i].title}",
-                        fontSize: 25,
+                        fontSize: 25.sp,
                         color: AppColors.primaryColor,
                         fontWeight: FontWeight.w400,
                       ),
-                      //     Text(
-                      //   " ${onBoardingList[i].title}",
-                      //   style: const TextStyle(
-                      //     fontSize: 25,
-                      //     color: AppColors.primaryColor,
-                      //     fontWeight: FontWeight.w400,
-                      //   ),
-                      //   // const TextStyle(fontSize: 20, color: Colors.orange)
-                      // ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 20.h,
                     ),
                     Container(
                         width: double.infinity,
@@ -68,17 +60,8 @@ class SliderCustomOnBoarding extends GetView<OnBoardingController> {
                         child: CustomText(
                             text: "${onBoardingList[i].subtitle}",
                             color: AppColors.secondaryColor,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500)
-                        //  Text(
-                        //   "${onBoardingList[i].subtitle}",
-                        //   textAlign: TextAlign.center,
-                        //   style: const TextStyle(
-                        //       color: AppColors.secondaryColor,
-                        //       fontSize: 13,
-                        //       fontWeight: FontWeight.w500),
-                        // ),
-                        ),
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w500)),
                   ],
                 ),
               )),

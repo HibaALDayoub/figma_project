@@ -5,6 +5,7 @@ import 'package:figma_proj/modules/security_quastion/view/widgets/input_field.da
 import 'package:figma_proj/modules/widgets/custom_button.dart';
 import 'package:figma_proj/modules/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../widgets/custom_app_bar.dart';
@@ -16,50 +17,52 @@ class QuestionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        margin: const EdgeInsets.only(top: 15),
-        child: Column(
-          children: [
-            const CustomAppBar(
-              text: "Security Questions",
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const CustomText(
-              text: "What was your First School’s Name? ",
-              fontWeight: FontWeight.w800,
-              color: AppColors.primaryColor,
-              textAlign: TextAlign.left,
-              fontSize: 44,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const CustomText(
-              text: "Please, write a short answer in the field below.",
-              fontWeight: FontWeight.w500,
-              color: AppColors.lightGrey,
-              fontSize: 16,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const InputField(),
-            SizedBox(
-              height: AppSize.screenHeight(context: context) * 0.17,
-            ),
-            CustomButton(
-              height: 60,
-              padding: const EdgeInsets.symmetric(horizontal: 65, vertical: 10),
-              onPressed: () {
-                Get.toNamed(AppRoutes.pinPage);
-              },
-              text: "Save",
-              margin: const EdgeInsets.only(top: 40),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          margin: EdgeInsets.only(top: 15.h),
+          child: Column(
+            children: [
+              const CustomAppBar(
+                text: "Security Questions",
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              CustomText(
+                text: "What was your First School’s Name? ",
+                fontWeight: FontWeight.w800,
+                color: AppColors.primaryColor,
+                textAlign: TextAlign.left,
+                fontSize: 44.sp,
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              CustomText(
+                text: "Please, write a short answer in the field below.",
+                fontWeight: FontWeight.w500,
+                color: AppColors.lightGrey,
+                fontSize: 16.sp,
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              const InputField(),
+              SizedBox(
+                height: AppSize.screenHeight(context: context) * 0.17,
+              ),
+              CustomButton(
+                height: 60.h,
+                padding: EdgeInsets.symmetric(horizontal: 65.w, vertical: 10.h),
+                onPressed: () {
+                  Get.toNamed(AppRoutes.pinPage);
+                },
+                text: "Save",
+                margin: EdgeInsets.only(top: 40.h),
+              ),
+            ],
+          ),
         ),
       ),
     ));

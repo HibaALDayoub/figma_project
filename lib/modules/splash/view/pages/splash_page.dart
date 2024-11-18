@@ -2,6 +2,7 @@ import 'package:figma_proj/core/constant/colors/app_colors.dart';
 import 'package:figma_proj/core/constant/size/app_size.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../widgets/custom_text.dart';
 import '../widgets/two_overlapping_circles.dart';
@@ -19,31 +20,31 @@ class SplashPage extends StatelessWidget {
         ),
         Center(
           child: TwoOverlappingCircles(
-            left: 60,
+            left: 50.w,
             heightContainer: AppSize.screenHeight(context: context) * 0.2,
             widthContainer: AppSize.screenWidth(context: context) * 0.4,
-            heightCircle: 95,
-            widthCircle: 95,
+            heightCircle: 95.h,
+            widthCircle: 95.w,
           ),
         ),
-        const CustomText(
+        CustomText(
           text: "Transfer Me",
           color: AppColors.primaryColor,
-          fontSize: 54,
+          fontSize: 54.sp,
           fontWeight: FontWeight.w600,
         ),
-        const CustomText(
+        CustomText(
           text: "Your Best Money Transfer Partner.",
-          fontSize: 13,
+          fontSize: 13.sp,
           fontWeight: FontWeight.w500,
           color: AppColors.primaryColor,
         ),
         SizedBox(
           height: AppSize.screenHeight(context: context) * 0.29,
         ),
-        const CustomText(
+        CustomText(
           text: "Secured by TransferMe.",
-          fontSize: 13,
+          fontSize: 13.sp,
           fontWeight: FontWeight.w500,
           color: AppColors.primaryColor,
         ),

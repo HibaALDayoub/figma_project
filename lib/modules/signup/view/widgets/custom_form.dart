@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constant/colors/app_colors.dart';
 import 'custom_text_form_field.dart';
@@ -17,19 +18,19 @@ class CustomForm extends StatelessWidget {
         ),
         CustomTextFormField(
           labelText: "Password",
-          showSuffixIcon: const Icon(
+          showSuffixIcon: Icon(
             Icons.remove_red_eye_outlined,
             color: AppColors.primaryColor,
-            size: 18,
+            size: 18.w,
           ),
           onChanged: (value) {},
         ),
         CustomTextFormField(
           labelText: "Confirm Password",
-          showSuffixIcon: const Icon(
+          showSuffixIcon: Icon(
             Icons.remove_red_eye_outlined,
             color: AppColors.primaryColor,
-            size: 18,
+            size: 18.w,
           ),
           onChanged: (value) {},
         ),

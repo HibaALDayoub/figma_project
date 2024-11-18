@@ -1,6 +1,7 @@
 import 'package:figma_proj/core/constant/colors/app_colors.dart';
 import 'package:figma_proj/modules/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../core/constant/app_routes.dart';
 import '../../../widgets/custom_app_bar.dart';
@@ -16,35 +17,38 @@ class ProfilePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           body: Container(
-        padding: const EdgeInsets.all(20),
-        margin: const EdgeInsets.only(top: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        margin: EdgeInsets.only(top: 15.h),
         child: Column(
           children: [
             const CustomAppBar(
               text: "Profile",
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: 30.h,
             ),
-            const CustomText(
+            CustomText(
               text: "Please set up your profile",
               fontWeight: FontWeight.w500,
               color: AppColors.lightGrey,
-              fontSize: 16,
+              fontSize: 16.sp,
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: 30.h,
             ),
-            const PickImage(),
+            PickImage(
+              left: 25.w,
+              top: 25.h,
+            ),
             const FormProfile(),
             CustomButton(
-              height: 60,
-              padding: const EdgeInsets.symmetric(horizontal: 65, vertical: 10),
+              height: 60.h,
+              padding: EdgeInsets.symmetric(horizontal: 65.w, vertical: 10.h),
               onPressed: () {
                 Get.toNamed(AppRoutes.phoneNumberRoute);
               },
               text: "Set",
-              margin: const EdgeInsets.only(top: 40),
+              margin: EdgeInsets.only(top: 40.h),
             ),
           ],
         ),

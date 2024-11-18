@@ -1,5 +1,6 @@
 import 'package:figma_proj/core/constant/colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../core/constant/app_routes.dart';
 import '../../../widgets/custom_button.dart';
@@ -13,14 +14,14 @@ import '../widgets/text_login.dart';
 class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
 
-  GlobalKey<FormState> formState = GlobalKey();
+  final GlobalKey<FormState> formState = GlobalKey();
   @override
   Widget build(BuildContext context) {
     Get.put(SignUpController());
     return SafeArea(
         child: Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(left: 25, right: 25),
+        padding: EdgeInsets.symmetric(horizontal: 25.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           // SizedBox(height: AppSize().context,)
@@ -28,10 +29,10 @@ class SignUpPage extends StatelessWidget {
           // if(value!.isempty || !regexp(r'[a-z A-Z]+$).hasmatch(value!)){return error name}
           children: [
             const AuthOverLappingCircles(),
-            const CustomText(
+            CustomText(
               text: "Sign Up",
               fontWeight: FontWeight.w700,
-              fontSize: 40,
+              fontSize: 40.sp,
             ),
             Form(
                 key: formState,
@@ -39,22 +40,22 @@ class SignUpPage extends StatelessWidget {
                   children: [
                     const CustomForm(),
                     CustomButton(
-                      height: 60,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 65, vertical: 10),
+                      height: 60.h,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 65.w, vertical: 10.h),
                       onPressed: () {
                         Get.toNamed(AppRoutes.profileRoute);
                       },
                       text: "Sign Up",
-                      margin: const EdgeInsets.only(top: 40),
+                      margin: EdgeInsets.only(top: 40.h),
                     ),
-                    const SizedBox(
-                      height: 25,
+                    SizedBox(
+                      height: 25.h,
                     ),
-                    const Text(
+                    Text(
                       "____________  or  ____________",
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           color: AppColors.grey),
                     ),
@@ -62,10 +63,10 @@ class SignUpPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const CustomText(
+                        CustomText(
                           text: 'Already have an account? ',
                           color: AppColors.grey,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           textAlign: TextAlign.center,
                         ),

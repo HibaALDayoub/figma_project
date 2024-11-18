@@ -1,5 +1,6 @@
 import 'package:figma_proj/core/constant/colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../controller/onboarding_controller.dart';
@@ -17,15 +18,17 @@ class DotsIndicatorsOnboarding extends StatelessWidget {
           ...List.generate(
               onBoardingList.length,
               (index) => AnimatedContainer(
-                    margin: const EdgeInsets.only(right: 5),
+                    margin: EdgeInsets.only(right: 5.w),
                     duration: const Duration(seconds: 1),
-                    width: 6,
-                    height: 6,
+                    width: 7.w,
+                    height: 7.h,
                     decoration: BoxDecoration(
                         color: controller.currentPage == index
                             ? AppColors.primaryColor
                             : AppColors.secondaryColor,
-                        borderRadius: BorderRadius.circular(10)),
+                        shape: BoxShape.circle
+                        // borderRadius: BorderRadius.circular(10.r)
+                        ),
                   ))
         ],
       ),

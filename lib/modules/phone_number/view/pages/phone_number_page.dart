@@ -1,7 +1,6 @@
-import 'package:figma_proj/modules/widgets/custom_app_bar2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../core/constant/app_routes.dart';
 import '../../../../core/constant/colors/app_colors.dart';
@@ -19,21 +18,21 @@ class PhoneNumberPage extends StatelessWidget {
         child: Scaffold(
       // appBar: customAppBar2(context),
       body: Container(
-        padding: const EdgeInsets.all(20),
-        margin: const EdgeInsets.only(top: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        margin: EdgeInsets.only(top: 15.h),
         child: Column(
           children: [
-            CustomAppBar(
+            const CustomAppBar(
               text: "Phone Number",
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: 30.h,
             ),
-            const CustomText(
+            CustomText(
               text: "Please add your\n mobile phone number",
               fontWeight: FontWeight.w500,
               color: AppColors.lightGrey,
-              fontSize: 16,
+              fontSize: 16.sp,
             ),
             CustomTextFormField(
               textInputType: TextInputType.number,
@@ -42,13 +41,13 @@ class PhoneNumberPage extends StatelessWidget {
               onChanged: (value) {},
             ),
             CustomButton(
-              height: 60,
-              padding: const EdgeInsets.symmetric(horizontal: 65, vertical: 10),
+              height: 60.h,
+              padding: EdgeInsets.symmetric(horizontal: 65.w, vertical: 10.h),
               onPressed: () {
                 Get.toNamed(AppRoutes.questionRoute);
               },
               text: "Confirm",
-              margin: const EdgeInsets.only(top: 40),
+              margin: EdgeInsets.only(top: 40.h),
             ),
           ],
         ),

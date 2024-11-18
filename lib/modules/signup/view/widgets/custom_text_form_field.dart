@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constant/colors/app_colors.dart';
 
@@ -24,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       cursorHeight: 28,
       showCursor: false,
       cursorColor: AppColors.primaryColor,
-      style: const TextStyle(height: 2.5),
+      style: TextStyle(height: 2.5.h),
       decoration: InputDecoration(
           suffixIcon: showSuffixIcon,
           suffix: Icon(
@@ -33,13 +34,15 @@ class CustomTextFormField extends StatelessWidget {
           ),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           labelText: labelText,
-          contentPadding: const EdgeInsets.only(bottom: 0, top: 40),
-          floatingLabelStyle: const TextStyle(
+          contentPadding: EdgeInsets.only(bottom: 0, top: 40.h),
+          floatingLabelStyle: TextStyle(
               color: AppColors.primaryColor,
-              fontSize: 17,
+              fontSize: 17.sp,
               fontWeight: FontWeight.w500),
-          labelStyle: const TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.grey),
+          labelStyle: TextStyle(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors.grey),
           focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
             color: AppColors.primaryColor,
